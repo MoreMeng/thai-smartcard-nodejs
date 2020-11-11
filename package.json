@@ -22,6 +22,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.16.4",
     "hex2imagebase64": "^1.0.0",
     "legacy-encoding": "^3.0.0",
