@@ -1,3 +1,6 @@
+const request = require('request');
+require('dotenv').config();
+
 const {
   Devices
 } = require('smartcard');
@@ -83,11 +86,25 @@ module.exports.init = io => {
           };
         }
         console.log('Received data', data);
-        io.emit('smc-data', {
-          status: 200,
-          description: 'Success',
-          data
-        });
+
+        console.log(`send hnso/${data['cid']}`);
+
+        let options = {
+          method: 'GET',
+          url: `${process.env.NHSO_ADDRESS}/nhso/${data['cid']}`
+        }
+        request(options, (error, response) => {
+          if (error) throw new Error(error)
+          console.log(response.body)
+
+          io.emit('smc-data', {
+            status: 200,
+            description: 'Success',
+            data: response.body
+          });
+        })
+
+
       } catch (ex) {
         const message = `Exception: ${ex.message}`;
         console.error(ex);

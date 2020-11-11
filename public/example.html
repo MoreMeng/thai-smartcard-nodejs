@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <h1>SMC</h1>
+  <!-- <h1>SMC</h1> -->
   <p id='data'></p>
   <script>
     var socket = io.connect('http://localhost:9898');
@@ -19,16 +19,16 @@
       socket.emit('set-query', {
         query: [
           'cid',
-          'name',
-          'nameEn',
-          'dob',
-          'gender',
-          'issuer',
-          'issueDate',
-          'expireDate',
-          'address',
-          'photo',
-          'nhso'
+          // 'name',
+          // 'nameEn',
+          // 'dob',
+          // 'gender',
+          // 'issuer',
+          // 'issueDate',
+          // 'expireDate',
+          // 'address',
+          // 'photo',
+          // 'nhso'
         ]
       });
     });

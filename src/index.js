@@ -7,6 +7,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const smc = require('./smc');
 
+
 const PORT = process.env.SMC_AGENT_PORT || 9898;
 
 if (app.env === 'production') {
