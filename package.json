@@ -12,13 +12,13 @@
     "thai smartcard"
   ],
   "author": "Somprasong Damyos",
-  "homepage": "https://github.com/somprasongd/thai-smartcard-nodejs#readme",
+  "homepage": "https://github.com/MoreMeng/thai-smartcard-nodejs#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/somprasongd/thai-smartcard-nodejs.git"
+    "url": "git+https://github.com/MoreMeng/thai-smartcard-nodejs.git"
   },
   "bugs": {
-    "url": "https://github.com/somprasongd/thai-smartcard-nodejs/issues"
+    "url": "https://github.com/MoreMeng/thai-smartcard-nodejs/issues"
   },
   "license": "ISC",
   "dependencies": {
