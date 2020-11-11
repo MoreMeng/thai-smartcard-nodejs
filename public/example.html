@@ -6,12 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Example-SMC</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+    .has-text-centered {
+  text-align: center;
+}
+  </style>
 </head>
 
-<body>
-  <!-- <h1>SMC</h1> -->
-  <p id='data'></p>
+<body class="has-background-info">
+
+  <div class="container pt-6">
+    <h1 class="is-size-2 has-text-white has-text-centered"><i class="fas fa-id-card"></i> ตรวจสอบสิทธิ์ด้วยบัตรประชาชน</h1>
+  </div>
+  <section class="section">
+    <div class="columns is-vcentered is-centered">
+      <div class="card column is-three-fifths">
+        <div class="card-content has-text-centered">
+          <p class="is-size-1" id='data'>กรุณาเสียบบัตร</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <script>
     var socket = io.connect('http://localhost:9898');
     const dataEl = document.getElementById('data');
@@ -32,25 +56,29 @@
         ]
       });
     });
-    socket.on('smc-data', function (data) {
-      console.log(data);
-      dataEl.innerHTML = JSON.stringify(data)
+    socket.on('smc-data', (res) => {
+      console.log(res);
+      dataEl.innerHTML = res.data
     });
-    socket.on('smc-error', function (data) {
-      console.log(data);
-      dataEl.innerHTML = JSON.stringify(data)
+    socket.on('smc-error', (res) => {
+      console.log(res);
+      // dataEl.innerHTML = JSON.stringify(res)
+      dataEl.innerHTML = 'กำลังอ่านบัตร...'
     });
-    socket.on('smc-removed', function (data) {
-      console.log(data);
-      dataEl.innerHTML = JSON.stringify(data)
+    socket.on('smc-removed', (res) => {
+      console.log(res);
+      // dataEl.innerHTML = JSON.stringify(res)
+      dataEl.innerHTML = 'กรุณาเสียบบัตร'
     });
-    socket.on('smc-incorrect', function (data) {
-      console.log(data);
-      dataEl.innerHTML = JSON.stringify(data)
+    socket.on('smc-incorrect', (res) => {
+      console.log(res);
+      // dataEl.innerHTML = JSON.stringify(res)
+      dataEl.innerHTML = 'ไม่สำเร็จ'
     });
-    socket.on('smc-inserted', function (data) {
-      console.log(data);
-      dataEl.innerHTML = JSON.stringify(data)
+    socket.on('smc-inserted', (res) => {
+      console.log(res);
+      // dataEl.innerHTML = JSON.stringify(res)
+      dataEl.innerHTML = 'กำลังอ่านบัตร..'
     });
   </script>
 </body>
