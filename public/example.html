@@ -11,31 +11,24 @@
   <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
   <style>
-    html,
-    body {
-      height: 100%;
-      font-family: 'Kanit', sans-serif;
-    }
-    .has-text-centered {
-  text-align: center;
-}
+    html, body { height: 100%; font-family: 'Kanit', sans-serif; } .has-text-centered { text-align: center; } #wrapper { padding-top: 10%; }
   </style>
 </head>
 
-<body class="has-background-info">
+<body class="has-background-info ">
 
-  <div class="container pt-6">
-    <h1 class="is-size-2 has-text-white has-text-centered"><i class="fas fa-id-card"></i> ตรวจสอบสิทธิ์ด้วยบัตรประชาชน</h1>
-  </div>
-  <section class="section">
-    <div class="columns is-vcentered is-centered">
-      <div class="card column is-three-fifths">
-        <div class="card-content has-text-centered">
-          <p class="is-size-1" id='data'>กรุณาเสียบบัตร</p>
+  <div id="wrapper" class="container is-flex-inline">
+    <h1 class="is-size-2 has-text-white has-text-centered "><i class="fas fa-id-card"></i> ตรวจสอบสิทธิ์ด้วยบัตรประชาชน</h1>
+    <section class="section">
+      <div class="columns is-vcentered is-centered">
+        <div class="card column is-three-fifths">
+          <div class="card-content has-text-centered">
+            <p class="is-size-1" id='data'>กรุณาเสียบบัตร</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
 
   <script>
